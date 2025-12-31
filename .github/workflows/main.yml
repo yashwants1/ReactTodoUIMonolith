@@ -1,0 +1,11 @@
+name: "my first pipeline"
+
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a greeting
+        run: |
+          echo "this is my first pipeline"
