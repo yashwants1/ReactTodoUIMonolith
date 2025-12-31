@@ -1,0 +1,8 @@
+sonar \
+  -D sonar.host.url=http://20.193.159.34:9000 \
+  -D sonar.token=sqp_f9b2fb82d49694ee05117d10250f6233450592c5 \
+  -D sonar.projectKey=todoui
+
+
+  sonar -D sonar.host.url=http://20.193.159.34:9000 -D sonar.token=sqp_f9b2fb82d49694ee05117d10250f6233450592c5 -D sonar.projectKey=todoui
+  sonar -D sonar.host.url=http://20.193.159.34:9000 -D sonar.token=sqp_2c50def85d2481bcaa1539abef8d41445edf0031 -D sonar.projectKey=todonewUI
