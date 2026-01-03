@@ -2,10 +2,30 @@ name: "my first pipeline"
 
 on: workflow_dispatch
 
+permissions:
+  contents: read
+  packages: read
+  # To report GitHub Actions status checks
+  statuses: write
+  
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
+    name: Setup Nodejs & Application Build
     steps:
-      - name: Print a greeting
-        run: |
-          echo "this is my first pipeline"
+    - name: Checkout
+      uses: actions/checkout@v6.0.1
+      
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v6.1.0
+      with:
+        node-version: 16.x
+        
+    - name: Super-Linter 
+      uses: super-linter/super-linter@v7.1.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        VALIDATE_CSS: true
+        VALIDATE_JAVASCRIPT_ES: true
+        VALIDATE_JSON: true
+      
